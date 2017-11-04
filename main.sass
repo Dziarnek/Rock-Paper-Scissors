@@ -48,11 +48,15 @@ $special-grey-light: #777
 
 .new-game
     display: flex
-    justify-content: center
+    align-items: center
+    flex-direction: column
     .new-g
         @extend %button
         color: $special-grey-light
         display: block
+    .winner
+        h2
+            display: inline-block
 
 .buttons
     display: flex
@@ -74,7 +78,7 @@ $special-grey-light: #777
 .table
     display: flex
     justify-content: space-around
-    align-items: center
+    align-items: flex-start
     font-size: 20px
     .player
         display: flex

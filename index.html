@@ -14,32 +14,35 @@
                     <h2 class="paper">Paper</h2>
                     <h2 class="scissors">Scissors</h2>
                 </section>
-                <section class="new-game">
-                    <button class="new-g" id="js-new-game">New game</button>
-                    </button>
-                </section>
-                <section class="buttons">
-                    <button class="btn"><i class="fa fa-hand-rock-o" aria-hidden="true"></i><p>Rock</p></button>
-                    <button class="btn"><i class="fa fa-hand-paper-o" aria-hidden="true"></i><p>Paper</p></button>
-                    <button class="btn"><i class="fa fa-hand-scissors-o" aria-hidden="true"></i><p>Scissors</p></button>
-                </section>
-                <section class="table">
-                    <div class="player">
-                        <p>Player Name</p>
-                        <p class="choice">Choice</p>
-                        <p class="points">Points</p>
+                <section class="new-game" id="js-new-game-section">
+                    <div class="winner" id="winner-section">        
+                        <h2>The winner is...</h2>
+                        <h2 id="winner">[Winner]</h2>
                     </div>
-                    <p>VS.</p>
-                    <div class="computer">
-                        <p>Computer</p>
-                        <p class="choice">Choice</p>
-                        <p class="points">Points</p>
-                    </div>
-                </section>
-                <section class="end">
-                    <h2>The winner is [player]</h2>
                     <button class="new-g" id="js-new-game">New game</button>
                 </section>
+                <div class="game" id="game">
+                    <section class="buttons">
+                        <button class="btn" id="js-rock"><i class="fa fa-hand-rock-o" aria-hidden="true"></i><p>Rock</p></button>
+                        <button class="btn" id="js-paper"><i class="fa fa-hand-paper-o" aria-hidden="true"></i><p>Paper</p></button>
+                        <button class="btn" id="js-scissors"><i class="fa fa-hand-scissors-o" aria-hidden="true"></i><p>Scissors</p></button>
+                    </section>
+                    <section class="table">
+                        <div class="player" id="player">
+                            <p id="playerName">Player Name</p>
+                            <p id="playerChoice">Choice</p>
+                            <p id="playerPoints">Points</p>
+                            <p id="playerWinner"></p>
+                        </div>
+                        <p>VS.</p>
+                        <div class="computer">
+                            <p id="computerName">Computer</p>
+                            <p id="computerChoice">Choice</p>
+                            <p id="computerPoints">Points</p>
+                            <p id="computerWinner"></p>
+                        </div>
+                    </section>
+                </div>
             </div>
             <script type="text/javascript" src="js/scripts.js"></script>
         </body>

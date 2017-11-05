@@ -1,5 +1,5 @@
-$special-gary: rgb(221, 221, 221)
-$special-grey-light: #777
+$special-grey: rgb(221, 221, 221)
+$special-grey-dark: #777
 
 @mixin transform ($scale)
     -webkit-transform: scale($scale)
@@ -8,7 +8,7 @@ $special-grey-light: #777
 
 %button
     padding: 10px
-    background-color: $special-gary
+    background-color: $special-grey
     border-radius: 10px
     border: none
     margin: 10px
@@ -30,6 +30,7 @@ $special-grey-light: #777
     max-width: 1200px
     background-color: rgb(240, 240, 240)
     margin: auto
+    border-radius: 15px
 
 .header
     text-align: center
@@ -52,7 +53,7 @@ $special-grey-light: #777
     flex-direction: column
     .new-g
         @extend %button
-        color: $special-grey-light
+        color: $special-grey-dark
         display: block
     .winner
         h2
@@ -68,10 +69,10 @@ $special-grey-light: #777
             margin: 5px
             display: inline-block
         p
-            color: $special-grey-light
+            color: $special-grey-dark
         .fa
-            background-color: $special-grey-light
-            color: $special-gary
+            background-color: $special-grey-dark
+            color: $special-grey
             padding: 5px
             border-radius: 5px
         
@@ -80,13 +81,25 @@ $special-grey-light: #777
     justify-content: space-around
     align-items: flex-start
     font-size: 20px
+    >p
+        align-self: center
     .player
         display: flex
         flex-direction: column
         text-align: center
-        p
-            &:first-of-type
-                font-weight: bold
+        .user
+            p
+                display: inline-block
+                &:nth-child(1)
+                    background-color: $special-grey-dark
+                    color: $special-grey
+                    border-radius: 5px
+                    padding: 10px
+                &:nth-child(2)
+                    font-weight: bold
+                    background-color: $special-grey
+                    border-radius: 5px
+                    padding: 10px
     .computer
         @extend .player
 
@@ -97,7 +110,7 @@ $special-grey-light: #777
         margin: 10px auto
     .new-g
         @extend %button
-        color: $special-grey-light
+        color: $special-grey-dark
         margin: 10px auto
 
 

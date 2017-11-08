@@ -43,27 +43,24 @@ function getComputerPick() {
 var rock = document.getElementById('js-rock'),
     paper = document.getElementById('js-paper'),
     scissors = document.getElementById('js-scissors'),
-    playerPick = 0,
-    computerPick = 0;
+    playerPick,
+    computerPick;
 
-    rock.addEventListener('click', plPickRock);
-    paper.addEventListener('click', plPickPaper);
-    scissors.addEventListener('click', plPickScissors);
+rock.addEventListener('click', function () {
+        playerPickFunction("Rock");
+    }
+);
+paper.addEventListener('click', function () {
+    playerPickFunction("Paper")
+    }
+);
+scissors.addEventListener('click', function () {
+    playerPickFunction("Scissors")
+    }
+);
 
-function plPickRock() {
-    playerPick = "Rock"
-    playerChoice.innerHTML = playerPick;
-    getComputerPick();
-    checkWinner(playerPick, computerPick)
-};
-function plPickPaper() {
-    playerPick = "Paper";
-    playerChoice.innerHTML = playerPick;
-    getComputerPick();
-    checkWinner(playerPick, computerPick)
-};
-function plPickScissors() {
-    playerPick = "Scissors";
+function playerPickFunction(pickedElm) {
+    playerPick = pickedElm;
     playerChoice.innerHTML = playerPick;
     getComputerPick();
     checkWinner(playerPick, computerPick)
@@ -74,23 +71,23 @@ function plPickScissors() {
 function checkWinner(playerPickElm, computerPickElm) {
     playerWinner.innerHTML = computerWinner.innerHTML = ""
     var winnerIs = "player";
-    if (playerPickElm == computerPickElm) {
+    if (playerPickElm === computerPickElm) {
         winnerIs = 'draw';
     } else if (
-        (computerPickElm == 'Rock' &&  playerPickElm == 'Scissors') ||
-        (computerPickElm == 'Scissors' &&  playerPickElm == 'Paper') ||
-        (computerPickElm == 'Paper' &&  playerPickElm == 'Rock')) {
+        (computerPickElm === 'Rock' &&  playerPickElm === 'Scissors') ||
+        (computerPickElm === 'Scissors' &&  playerPickElm === 'Paper') ||
+        (computerPickElm === 'Paper' &&  playerPickElm === 'Rock')) {
 
         winnerIs = 'computer';
     };
 
-    if (winnerIs == 'player') {
+    if (winnerIs === 'player') {
         playerWinner.innerHTML = "Win!";
         playerPoints.innerHTML++;
-    } else if (winnerIs == 'computer') {
+    } else if (winnerIs === 'computer') {
         computerWinner.innerHTML = "Win!";
         computerPoints.innerHTML++;
-    } else if (winnerIs == 'draw') {
+    } else if (winnerIs === 'draw') {
         playerWinner.innerHTML = "Draw!";
         computerWinner.innerHTML = "Draw!";
     };

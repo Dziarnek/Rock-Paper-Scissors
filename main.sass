@@ -1,0 +1,119 @@
+$special-grey: rgb(221, 221, 221)
+$special-grey-dark: #777
+
+@mixin transform ($scale)
+    -webkit-transform: scale($scale)
+    -ms-transform: scale($scale)
+    transform: scale($scale)
+
+%button
+    padding: 10px
+    background-color: $special-grey
+    border-radius: 10px
+    border: none
+    margin: 10px
+    font-size: 20px
+    cursor: pointer
+    &:hover
+        @include transform(1.1)
+
+%title
+    padding: 15px
+    border-radius: 10px
+    margin: 5px
+    color: white
+    display: inline-block
+    font-size: 20px
+
+.container
+    width: 100%
+    max-width: 1200px
+    background-color: rgb(240, 240, 240)
+    margin: auto
+    border-radius: 15px
+
+.header
+    text-align: center
+    h1
+        font-size: 35px
+        display: inline-block
+    .rock
+        @extend %title
+        background-color: #777
+    .paper
+        @extend %title
+        background-color: #5bc0de
+    .scissors
+        @extend %title
+        background-color: #d9534f
+
+.new-game
+    display: flex
+    align-items: center
+    flex-direction: column
+    .new-g
+        @extend %button
+        color: $special-grey-dark
+        display: block
+    .winner
+        h2
+            display: inline-block
+
+.buttons
+    display: flex
+    justify-content: center
+    .btn
+        @extend %button
+        p,
+        .fa
+            margin: 5px
+            display: inline-block
+        p
+            color: $special-grey-dark
+        .fa
+            background-color: $special-grey-dark
+            color: $special-grey
+            padding: 5px
+            border-radius: 5px
+        
+.table
+    display: flex
+    justify-content: space-around
+    align-items: flex-start
+    font-size: 20px
+    >p
+        align-self: center
+    .player
+        display: flex
+        flex-direction: column
+        text-align: center
+        .user
+            p
+                display: inline-block
+                &:nth-child(1)
+                    background-color: $special-grey-dark
+                    color: $special-grey
+                    border-radius: 5px
+                    padding: 10px
+                &:nth-child(2)
+                    font-weight: bold
+                    background-color: $special-grey
+                    border-radius: 5px
+                    padding: 10px
+    .computer
+        @extend .player
+
+.end
+    display: flex
+    flex-direction: column
+    h2
+        margin: 10px auto
+    .new-g
+        @extend %button
+        color: $special-grey-dark
+        margin: 10px auto
+
+
+
+
+    
